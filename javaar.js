@@ -213,6 +213,27 @@ function createJellyfish() {
             });
         });
     }
+// ================= 7. Interactividad de "Leer más" (Blog) =================
+    const readMoreLinks = document.querySelectorAll('.read-more');
+
+    readMoreLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault(); // Evita el salto repentino del enlace #blog
+            
+            const card = link.closest('.blog-card');
+            const extendedText = card.querySelector('.extended-content');
+
+            if (extendedText.style.display === 'none') {
+                extendedText.style.display = 'block';
+                link.innerHTML = 'Leer menos &uarr;';
+            } else {
+                extendedText.style.display = 'none';
+                link.innerHTML = 'Leer más &rarr;';
+                // Regresa la vista suavemente al inicio de la tarjeta al cerrarla
+                card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        });
+    });
 
 // Iniciar al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
