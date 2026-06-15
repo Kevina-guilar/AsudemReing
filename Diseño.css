@@ -481,3 +481,36 @@ footer {
 .blog-card.hide {
   display: none;
 }
+/* --- Integración de Video dentro del Blog --- */
+.blog-video-wrapper {
+    margin-top: 4rem; /* Separa el video de la cuadrícula de artículos */
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea divisoria sutil */
+    text-align: center;
+}
+
+.blog-video-wrapper .video-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+/* Contenedor responsivo en proporción 16:9 */
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #000;
+}
+
+.video-container video {
+    width: 100%;
+    display: block;
+    outline: none;
+}
